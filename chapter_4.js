@@ -2,7 +2,7 @@
 
 // ## The Sum of a Range ## //
 // The bonus part of range needs to be fixed
-/*
+
 function range (start, end, step){
 	let arr = [];
 	if (step) {
@@ -32,10 +32,9 @@ function sum (arr){
 
 console.log(sum(range(1, 10, 2))); //55
 
-*/
 
 // ## Reversing an Array ## //
-/*
+
 let arr = [
 	1,
 	2,
@@ -68,9 +67,9 @@ function reverseArrayinPlace (arr){
 //console.log(reverseArray());
 console.log(reverseArrayinPlace(arr2));
 //console.log(arr2);
-*/
 
-/*
+
+
 // ## A list ## //
 let masterList = { value: 1, rest: { value: 2, rest: { value: 3, rest: null } } };
 
@@ -117,7 +116,7 @@ console.log(
 );
 console.log(prepend(25, masterList));
 //console.log(nth(masterList, 1));
-*/
+
 
 // ## Deep Comparison ## //
 
@@ -137,4 +136,4 @@ let deepEqual = (obj1, obj2) => {
 	return true;
 };
 
-console.log(deepEqual(objA, objB));
+console.log(deepEqual(objA, objB)); 

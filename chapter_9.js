@@ -3,34 +3,57 @@
 //## ##//
 // Fill in the regular expressions
 
-verify(/.../, [ 'my car', 'bad cats' ], [ 'camper', 'high art' ]);
+/*
+1. car and cat
 
-verify(/.../, [ 'pop culture', 'mad props' ], [ 'plop', 'prrrop' ]);
+2. pop and prop
 
-verify(/.../, [ 'ferret', 'ferry', 'ferrari' ], [ 'ferrum', 'transfer A' ]);
+3. ferret, ferry, and ferrari
 
-verify(/.../, [ 'how delicious', 'spacious room' ], [ 'ruinous', 'consciousness' ]);
+4. Any word ending in ious
 
-verify(/.../, [ 'bad punctuation .' ], [ 'escape the period' ]);
+5. A whitespace character followed by a period, comma, colon, or semicolon
 
-verify(/.../, [ 'Siebentausenddreihundertzweiundzwanzig' ], [ 'no', 'three small words' ]);
+6. A word longer than six letters
 
-verify(/.../, [ 'red platypus', 'wobbling nest' ], [ 'earth bed', 'learning ape', 'BEET' ]);
+7. A word without the letter e (or E)
+*/
+
+//verify(/ca[rt]/, [ 'my car', 'bad cats' ], [ 'camper', 'high art' ]); //?
+
+//verify(/pr?op/, [ 'pop culture', 'mad props' ], [ 'plop', 'prrrop' ]);
+
+// verify(/ferr[^u]/, [ 'ferret', 'ferry', 'ferrari' ], [ 'ferrum', 'transfer A' ]);
+
+// verify(/ious\b/, [ 'how delicious', 'spacious room' ], [ 'ruinous', 'consciousness' ]);
+
+// verify(/\s+[.,;:]/, [ 'bad punctuation .' ], [ 'escape the period' ]);
+
+// verify(/\w{6}/, [ 'Siebentausenddreihundertzweiundzwanzig' ], [ 'no', 'three small words' ]);
+
+//verify(/\b[^\We]+\b/i, [ 'red platypus', 'wobbling nest' ], [ 'earth bed', 'learning ape', 'BEET' ]);
 
 function verify (regexp, yes, no){
 	// Ignore unfinished exercises
 	if (regexp.source == '...') return;
 	for (let str of yes)
 		if (!regexp.test(str)) {
-			console.log(`Failure to match '${str}'`);
+			console.log(`No....Failure to match '${str}'`);
+		} else {
+			//Success!
+			console.log(`Yes!! Successful match for ${str}`)
 		}
 	for (let str of no)
 		if (regexp.test(str)) {
-			console.log(`Unexpected match for '${str}'`);
+			console.log(`No....Unexpected match for '${str}'`);
+		} else{
+			//Success!
+			console.log(`Yes!! Expected non-match for ${str}`)
 		}
+
 }
 
-//## ##//
+//##Replace single quotes with double quotes, while keeping single quotes used in contractions ##//
 
 let text = "'I'm the cook,' he said, 'it's my job.'";
 // Change this call.

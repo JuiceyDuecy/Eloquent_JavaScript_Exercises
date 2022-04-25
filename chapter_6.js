@@ -1,5 +1,5 @@
 'use strict';
-/*
+
 // ## A vector type ## //
 
 class Vec {
@@ -69,7 +69,7 @@ group.add(10);
 group.delete(10);
 console.log(group.has(10));
 // → false
-*/
+
 // ## Iterable Groups ## //
 
 class Group {
