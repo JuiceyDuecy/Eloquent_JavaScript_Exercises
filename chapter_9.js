@@ -38,33 +38,31 @@ function verify (regexp, yes, no){
 	if (regexp.source == '...') return;
 	for (let str of yes)
 		if (!regexp.test(str)) {
-			console.log(`No....Failure to match '${str}'`);
+			//console.log(`No....Failure to match '${str}'`);
 		} else {
 			//Success!
-			console.log(`Yes!! Successful match for ${str}`)
+			//console.log(`Yes!! Successful match for ${str}`)
 		}
 	for (let str of no)
 		if (regexp.test(str)) {
-			console.log(`No....Unexpected match for '${str}'`);
-		} else{
+			//console.log(`No....Unexpected match for '${str}'`);
+		} else {
 			//Success!
-			console.log(`Yes!! Expected non-match for ${str}`)
+			//console.log(`Yes!! Expected non-match for ${str}`)
 		}
-
 }
 
 //##Replace single quotes with double quotes, while keeping single quotes used in contractions ##//
 
 let text = "'I'm the cook,' he said, 'it's my job.'";
 // Change this call.
-console.log(text.replace(/A/g, 'B'));
+//console.log(text.replace(/(^|\W)'|'(\W|$)/g, '$1"$2'));
 // → "I'm the cook," he said, "it's my job."
 
 //## ##//
 
 // Fill in this regular expression.
-let number = /^...$/;
-
+let number = /^[+\-]?(\d+(\.\d*)?|\.\d+)([eE][+\-]?\d+)?$/;
 // Tests:
 for (let str of [ '1', '-1', '+15', '1.55', '.5', '5.', '1.3e2', '1E-4', '1e+12' ]) {
 	if (!number.test(str)) {
